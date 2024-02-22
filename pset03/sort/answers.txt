@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Because "Bubble sort" has a big omega of n running time (if already sorted), that make bubble sort very easy and faster than selection sort.
+
+sort2 uses: Merge sort.
+
+How do you know?: Because "Merge sort" has a O running time of n log n, is going to be faster than both "selection and bubble sort".
+
+sort3 uses: Selection sort
+
+How do you know?: Because "Selection sort" is slower than "Bubble sort" when already sorted.
