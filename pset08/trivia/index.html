@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // Check multiple choice questions:
+            // wait all the DOM content load
+            document.addEventListener('DOMContentLoaded', function(){
+                // get all corrects buttons
+                let corrects = document.querySelectorAll('.correct');
+                let feedbacks = document.querySelectorAll('.feedback');
+
+                // listen to all the corrects buttons
+                for (let i = 0; i < corrects.length; i++) {
+                    corrects[i].addEventListener('click', function() {
+                        corrects[i].style.backgroundColor = 'green'; // turn green
+                        feedbacks[i].innerHTML = 'Correct!'; // feedback beneath the question
+                    });
+                }
+                // get all incorrects buttons
+                let incorrects = document.querySelectorAll('.incorrect');
+                // listen to all the incorrects buttons
+                for (let j = 0; j < incorrects.length; j++) {
+                    incorrects[j].addEventListener('click', function() {
+                        incorrects[j].style.backgroundColor = 'red'; // turn red
+                        feedbacks[j].innerHTML = 'Incorrect!'; // feedback beneath the question
+                    });
+                }
+
+
+            // Check text-based free response question:
+            document.querySelector('#confirm').addEventListener('click', function() {
+                let input = document.querySelector('input');
+                if (input.value === 'Brasília') {
+                    input.style.backgroundColor = 'green';
+                    input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                }
+                else {
+                    input.style.backgroundColor = 'red';
+                    input.parentElement.querySelector('.feedback').innerHTML = 'Incorrect!';
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>What is the smallest country in the world by land area?</h3>
+                 <button class="incorrect">Monaco</button>
+                 <button class="incorrect">Nauru</button>
+                 <button class="incorrect">San Marino</button>
+                 <button class="correct">Vatican City</button> <!-- correct -->
+                 <p class="feedback"></p>
+
+                 <h3>Who wrote the play "Romeo and Juliet"?</h3>
+                 <button class="correct">William Shakespeare</button> <!-- correct -->
+                 <button class="incorrect">Charles Dickens</button>
+                 <button class="incorrect">Jane Austen</button>
+                 <button class="incorrect">George Bernard Shaw</button>
+                 <p class="feedback"></p>
+
+                 <h3>What element does the chemical symbol "O" represent?</h3>
+                 <button class="incorrect">Gold</button>
+                 <button class="correct">Oxygen</button> <!-- correct -->
+                 <button class="incorrect">Osmium</button>
+                 <button class="incorrect">Oganesson</button>
+                 <p class="feedback"></p>
+
+                 <h3>What is the largest ocean on Earth?</h3>
+                 <button class="incorrect">Atlantic Ocean</button>
+                 <button class="incorrect">Indian Ocean</button>
+                 <button class="incorrect">Southern Ocean</button>
+                 <button class="correct">Pacific Ocean</button> <!-- correct -->
+                 <p class="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the capital of Brazil?</h3>
+                <input type="text"></input>
+                <button id="confirm">Confirm</button>
+                <p class="feedback"></p>
+                <!-- answer: Brasília  -->
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- run http-server -->
