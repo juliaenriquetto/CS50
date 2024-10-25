@@ -1,0 +1,14 @@
+Energy:
+Average energy of music is 0.659
+
+Valence:
+Average valence of music is 0.484
+
+Danceability:
+Average danceability is 0.716
+
+Conclusion:
+The user listens to both happy and sad music. So, i would say that the user is from the Blue mood group.
+
+Hypothesis:
+The data from his top 100 songs, might not give accurate information of the user.
